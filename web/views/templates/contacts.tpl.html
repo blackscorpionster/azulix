@@ -1,0 +1,7 @@
+<div id="divContacsContainer">
+	{foreach from=$contacts key=pos item=arrContacto}
+		<div id="divContact{$arrContacto.COD_USER_GUEST}" onclick="JsonShowContacChatWindow({$arrContacto.COD_USER_GUEST},'{$arrContacto.TXT_NAME}','{$arrContacto.TXT_NAME} {$arrContacto.TXT_SURNAME}')" class="contactOption" title="{$arrContacto.TXT_NAME} {$arrContacto.TXT_SURNAME}">
+			{$arrContacto.TXT_NAME}
+		</div>
+	{/foreach}
+</div>

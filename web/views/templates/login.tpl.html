@@ -1,0 +1,18 @@
+<div id="divLogin" class="login">
+	<input type="hidden" name="token" id="token" value="{$token}" />
+	<div style="margin-top:10px;">
+		{$labels.user_text}
+	</div>
+	<div style="margin-top:10px;text-align:center;">
+		<input type="text" id="txtLogin" name="txtLogin" class="textBox" value="" />
+	</div>
+	<div style="margin-top:10px;">
+		{$labels.pass_txt}
+	</div>
+	<div style="margin-top:10px;text-align:center;">
+		<input type="password" id="txtPass" name="txtPass" class="textBox" />
+	</div>
+	<div style="margin-top:10px;text-align:center;">
+		<input class="button" type="button" id="btIngresar" name="btIngresar" value="{$labels.log_in}" onClick="validateLogin(this.form)" />
+	</div>
+</div>

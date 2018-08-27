@@ -1,0 +1,19 @@
+﻿CREATE OR REPLACE FUNCTION FN_ISACTIONPUBLIC(
+  IN pty_action INT
+)
+RETURNS BOOLEAN AS
+$BODY$
+DECLARE
+ isPublic smallint;
+BEGIN
+  SELECT public
+  INTO isPublic
+  FROM option
+  WHERE cod_option = pty_action;
+
+  RETURN isPublic = 1;
+END;
+$BODY$
+LANGUAGE PLPGSQL STABLE;
+
+SELECT * FROM FN_ISACTIONPUBLIC(10000);

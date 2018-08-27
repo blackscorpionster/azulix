@@ -1,0 +1,7 @@
+<div id="divMenuOptions" class="menuOptions">
+	{foreach from=$menu key=appOptName item=arrOpt}
+		<div id="DivAppPpt{$arrOpt.OPT_COD}" class="menuOption" onclick="{$arrOpt.COMMAND}">
+			{$appOptName|lower|capitalize|substr:0:1}
+		</div>
+	{/foreach}
+</div>
