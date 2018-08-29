@@ -59,7 +59,7 @@ class actionLogin
 		}
  
 		$appMenu = array();
-		//print_r(options);die();
+		//print_r($options);die();
 		foreach($options as $pos => $arrOpt)
 		{
 			//if OPT_MENU = 1 then, it's a main option menu, but if it is 2, is session option
@@ -68,7 +68,7 @@ class actionLogin
 			}
 
 			$appMenu[$arrOpt["TXT_OPTION"]]["OPT_COD"] = $arrOpt["COD_OPTION"];
-			$appMenu[$arrOpt["TXT_OPTION"]]["ICO"] = $arrOpt["IMG_USER"];
+			$appMenu[$arrOpt["TXT_OPTION"]]["ICON"] = $arrOpt["ICON"];
 			if($arrOpt["POP_UP"])
 			{
 				$appMenu[$arrOpt["TXT_OPTION"]]["COMMAND"] = command($arrOpt["COD_OPTION"],$arrOpt["TXT_COMMAND"],'P');//"popUpWindow(".$arrOpt["COD_OPTION"].")";

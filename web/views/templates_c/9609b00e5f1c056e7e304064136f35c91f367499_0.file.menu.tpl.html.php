@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2018-08-27 20:52:03
+/* Smarty version 3.1.29, created on 2018-08-29 23:00:43
   from "C:\public_html\azulix\web\views\templates\menu.tpl.html" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_5b83d7d38c0a55_96479382',
+  'unifunc' => 'content_5b8698fb614579_82091831',
   'file_dependency' => 
   array (
     '9609b00e5f1c056e7e304064136f35c91f367499' => 
     array (
       0 => 'C:\\public_html\\azulix\\web\\views\\templates\\menu.tpl.html',
-      1 => 1535367078,
+      1 => 1535547640,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_5b83d7d38c0a55_96479382 ($_smarty_tpl) {
+function content_5b8698fb614579_82091831 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_capitalize')) require_once 'C:\\public_html\\azulix\\vendor\\Smarty\\libs\\plugins\\modifier.capitalize.php';
 ?>
 <div id="divMenuOptions" class="menuOptions">
@@ -39,9 +39,10 @@ $__foreach_arrOpt_0_saved_local_item = $_smarty_tpl->tpl_vars['arrOpt'];
 ?>
 		<div id="DivAppPpt<?php echo $_smarty_tpl->tpl_vars['arrOpt']->value['OPT_COD'];?>
 " class="menuOption" onclick="<?php echo $_smarty_tpl->tpl_vars['arrOpt']->value['COMMAND'];?>
+" title="<?php echo smarty_modifier_capitalize(mb_strtolower($_smarty_tpl->tpl_vars['appOptName']->value, 'UTF-8'));?>
 ">
-			<?php echo substr(smarty_modifier_capitalize(mb_strtolower($_smarty_tpl->tpl_vars['appOptName']->value, 'UTF-8')),0,1);?>
-
+			<span class="fas <?php echo $_smarty_tpl->tpl_vars['arrOpt']->value['ICON'];?>
+ fa-2x"></span>
 		</div>
 	<?php
 $_smarty_tpl->tpl_vars['arrOpt'] = $__foreach_arrOpt_0_saved_local_item;

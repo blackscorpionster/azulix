@@ -11,7 +11,7 @@ body
 {
 	background:#E4E4E4;  /*#2A3642;#EFEFEF;*/
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:13px;
+	font-size:100%;
 	color:#000000;
 }
 
@@ -47,7 +47,6 @@ Menu
 
 .accountInfo
 {
-	color:#FF0000;
 	height: 30px;
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
@@ -57,7 +56,6 @@ Menu
 .menuOptions
 {
 	overflow-y:auto;
-	min-height 30px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -68,15 +66,20 @@ Menu
 
 .menuOption
 {
-	color:#000000;
-	background-color:#FFFFFF;
-	margin-bottom:10px;
-	height:30px;
-	min-width: 30px;
-	padding-top:7px;
+	padding: 2px 2px 2px 2px;
+	border-radius: 5px;
+	margin-bottom:5px;
+	margin-right: 5px;
 	text-align:center;
 	cursor:pointer;
-	margin-right: 5px;
+	border-style: solid;
+	border-width: 1.5px;
+}
+
+.menuOption:hover
+{
+	color: #0000FF;
+	background-color: #00FFFF;
 }
 
 /*
@@ -85,8 +88,6 @@ Menu
 
 .contactOption
 {
-	color:#000000;
-	background-color:#E4E4E4;
 	margin-bottom:10px;
 	height:30px;
 	padding-top:7px;
@@ -94,6 +95,11 @@ Menu
 	cursor:pointer;
 }
 
+.contactOption:hover
+{
+	color: #0000FF;
+	background-color: #00FFFF;
+}
 
 /*
 Main Area
