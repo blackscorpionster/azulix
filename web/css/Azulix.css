@@ -88,9 +88,8 @@ Menu
 
 .contactOption
 {
-	margin-bottom:10px;
+	padding-top: 7px;
 	height:30px;
-	padding-top:7px;
 	position:relative;
 	cursor:pointer;
 }

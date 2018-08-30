@@ -1,10 +1,14 @@
-﻿CREATE OR REPLACE FUNCTION FN_USERREQUESTS
+﻿DROP FUNCTION IF EXISTS FN_USERREQUESTS(
+    IN ptyuser INTEGER
+);
+
+CREATE OR REPLACE FUNCTION FN_USERREQUESTS
 (
     IN ptyuser INTEGER
 )
-RETURNS TABLE ( TIPO SMALLINT, 
+RETURNS TABLE ( REQ_TYPE SMALLINT, 
                 USER_NAME VARCHAR, 
-                FEC_START VARCHAR, 
+                REQ_DATE VARCHAR, 
                 LINK_MESSAGE VARCHAR,
                 COD_USER INTEGER, 
                 TXT_NAME VARCHAR,
@@ -12,9 +16,9 @@ RETURNS TABLE ( TIPO SMALLINT,
 $BODY$
 	select  x.*
 	from    (
-				select  1::SMALLINT TIPO, 
+				select  1::SMALLINT REQ_TYPE, 
 						concat_ws(' ',b.txt_name ,b.txt_surname) USER_NAME, 
-						TO_CHAR(fec_start,'DD/MM/YYYY') FEC_START, 
+						TO_CHAR(fec_start,'DD/MM/YYYY') REQ_DATE, 
 						link_message LINK_MESSAGE,
 						b.cod_user COD_USER, 
 						b.txt_name TXT_NAME, b.txt_surname TXT_SURNAME
@@ -24,9 +28,9 @@ $BODY$
 				and     a.cod_user_guest = b.cod_user 
 				and     a.cod_state = 2
 				union all
-				select  2::SMALLINT TIPO, 
+				select  2::SMALLINT REQ_TYPE, 
 						concat_ws(' ',b.txt_name, b.txt_surname) USER_NAME, 
-						TO_CHAR(fec_start,'DD/MM/YYYY') FEC_START, 
+						TO_CHAR(fec_start,'DD/MM/YYYY') REQ_DATE, 
 						link_message LINK_MESSAGE,
 						b.cod_user COD_USER, 
 						b.txt_name TXT_NAME, 

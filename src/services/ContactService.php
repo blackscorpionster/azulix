@@ -1,4 +1,5 @@
 <?php
+// Services should not use elements from the session, this use these methods can be reused for instance by API end points
 namespace src\services;
 use helpers\Connect;
 
@@ -26,5 +27,14 @@ class ContactService {
  		$data = $this->dbManager->returnMultiData($plsql);
 		return $data;
 	}
-
+	/**
+	* Finds all contact requests made by other users
+	* @param integer $userId
+	* @return array
+	*/
+	public function getContactRequests(int $userId) {
+		$plsql = $this->dbManager->buildSql('FN_USERREQUESTS', "{$userId}");
+ 		$data = $this->dbManager->returnMultiData($plsql);
+		return $data;
+	}
 }

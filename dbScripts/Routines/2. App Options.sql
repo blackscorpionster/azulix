@@ -48,6 +48,7 @@ $BODY$
 			and c.txt_option = b.txt_option )
 	where   a.cod_app = pty_app
 	and     b.cod_app = a.cod_app
+ORDER BY b.cod_option
 	;
 
 $BODY$
