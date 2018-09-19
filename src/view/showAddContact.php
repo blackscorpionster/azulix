@@ -28,7 +28,7 @@ class showAddContact {
 		
 		$response = new AjaxResponse();
 		//$boxes = utf8_encode($boxes);
-		//print($boxes);die();
+		print($boxes);die();
 		$response->setFunctionExc("userDirectory");//("setObjectAsANewSon");
 		
 		$response->setResponse( 
