@@ -14,9 +14,9 @@ class Config {
 	const APP_LOG_OUT = 2;
 	const APP_DIR_NAME = 'azulix';
 	const APP_SHOW_DEFAULT_VIEW = '../src/view/showDefault.php';
-	const APP_DB_HOST = false;
+	const APP_DB_HOST = 'localhost';
 	const APP_DB_USER = 'postgres';
-	const APP_DB_PASSWORD = 'NewLife2014';
+	const APP_DB_PASSWORD = 'NewLife2014*';
 	const APP_DB_NAME = 'azulix_dev';
 	const APP_DB_DRIVER = 'postgres9';
 }

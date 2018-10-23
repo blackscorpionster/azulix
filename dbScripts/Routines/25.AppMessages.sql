@@ -27,11 +27,22 @@ $BODY$
 LANGUAGE SQL STABLE;
 
 
-SELECT * FROM FN_GETMESSAGES(1, 'eng', '{"about", "accept", "discard"}'::varchar[]);
+
+SELECT * FROM FN_GETMESSAGES(1, 'eng', '{"log_in", "user_text", "pass_txt"}'::varchar[]);
 
 /*
+
+
     select  txt_message TXT_MESSAGE
     from    APP_MESSAGE
     where   cod_app 		= 1
     and     cod_language 	= 'eng'
-    and     cod_message 	= ANY('{"about", "accept", "discard"}'::varchar[])*/
+    and     cod_message 	= 'login'
+
+    select  txt_message TXT_MESSAGE
+    from    APP_MESSAGE
+    where   cod_app 		= 1
+    and     cod_language 	= 'eng'
+    and     cod_message 	= ANY('{"log_in", "user_text", "pass_txt"}'::varchar[])
+
+    */
