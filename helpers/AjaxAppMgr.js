@@ -56,7 +56,7 @@ function procesando(ind)
 
 function adminSuccesAjax(response)
 {
-	console.log("Seccess");
+	console.log("Success", response);
 	try//se evalua si va por Ajax
 	{
 		var resultado = YAHOO.lang.JSON.parse(response.responseText);

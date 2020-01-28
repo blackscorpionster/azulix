@@ -1,10 +1,15 @@
 <?php
-class buneli_show
+namespace src\view;
+
+use helpers\AjaxResponse;
+
+class showDefault
 {
-	function show_response(&$form)
-	{
-		$response = new AjaxResponse();
-		return $response;
+	public function __construct($form) {
+		$this->response = new AjaxResponse();
+	}
+
+	public function addResponse() {
+
 	}
 }
-?>

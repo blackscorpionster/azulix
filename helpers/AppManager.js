@@ -9,7 +9,7 @@ function app(lang)
 	this.workArea = null;
 	this.action = null;
 	this.type = null;
-	this.url = 'src/app.php';
+	this.url = 'app.php';
 	this.msg = null;
 	this.personalCode = null;
 	this.tmpFormContainer = null;
@@ -68,6 +68,9 @@ function app(lang)
 		if (!this.reqForm) {
 			this.reqForm = this.mainForm;
 		}
+
+		//console.log(this);
+
 		callAjaxApp(this.reqForm,this.type,urlAction);
 		this.action = null;
 		this.reqForm = this.mainForm;
@@ -101,9 +104,9 @@ function app(lang)
 		this.mainForm = mainFormDoc;
 		this.tmpFormContainer = divTmpForm;
 		this.master = divMaster;
-		this.type = 'GET';
-		this.action = 10000;
-		this.postBackAction();
+		// this.type = 'GET';
+		// this.action = 10000;
+		// this.postBackAction();
 	}
 	
 	this.setTempValue = function(name,txtvalue)

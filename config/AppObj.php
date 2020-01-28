@@ -6,7 +6,7 @@ class AppObj
 	var $objValidate;
 	var $objExecute;
 	var $objShow;
-	var $objShow_default = \config\Config::APP_SHOW_DEFAULT_VIEW;
+	var $objShowDefault;
 	var $form;
 	var $flgValidate = false;
 	var $flgExecution  = false;
@@ -14,6 +14,7 @@ class AppObj
 
 	function __construct(array $actionArray, array $data)
 	{
+		$this->objShowDefault = Config::APP_SHOW_DEFAULT_VIEW;
 		if(count($actionArray)>0)
 		{
 			try 
@@ -65,11 +66,10 @@ class AppObj
 		} else {
 			$className = $this->objShowDefault;
 		}
-		
-		$className = 'src\\view\\'.str_replace('.php', null, $className);
-		
-		$response = new $className($this->form);
+		$finalViewClass = 'src\\view\\'.str_replace('.php', null, $className);
+		//die("Before rendering >> " . $finalViewClass);
+		$response = new $finalViewClass($this->form);
 		$response->addResponse();
-		return $response->response;
+		return $response;//->response;
 	}
 }

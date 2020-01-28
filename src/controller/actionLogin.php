@@ -27,6 +27,8 @@ class actionLogin
 			$txtLogin = $this->form["txtLogin"];
 			$txtPass = $this->form["txtPassEncoded"];
 			$userData = $auth->validateUser($txtLogin,$txtPass);
+			//print_r($userData);die(">>>");
+		
 			$userData = $userData[0];
 			if (!empty($userData)) {
 				$userId = $userData["COD_USER"];

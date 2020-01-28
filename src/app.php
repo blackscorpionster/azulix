@@ -57,6 +57,8 @@ if(!isset($_SESSION['app_options']) && isset($_SESSION["app_user_data"]))
 //but still the action can be of public access.
 if (empty($_SESSION["app_options"])) {
 	//Show login is public but no token is sent in the request, all other public actions need to send a token
+	// print_r($_REQUEST);
+	// die("here ".$userRequestedAction);
 	if ((int)$userRequestedAction !== \config\Config::APP_SHOW_LOGIN_ACTION) {
 		if (empty($_REQUEST["token"]) || ($_REQUEST["token"] !== $_SESSION['token'])) {
 			trigger_error("opt_not_found",E_USER_ERROR);
@@ -69,6 +71,9 @@ if (empty($_SESSION["app_options"])) {
 		trigger_error("opt_not_found",E_USER_ERROR);
 		return sendResponse();
 	}
+
+// print_r(appOption);
+// die("here");
 
 	$currentAction = $appOption[0];
 	if (!isset($currentAction['PUBLIC']) || 1 !== (int)$currentAction['PUBLIC']) {
@@ -112,7 +117,7 @@ if($appObject->flgAction)
 	$appObject->validateForm();
 
 	$appObject->executeAction();
-
+	
 	$response = $appObject->showResponse();
 }
 else
@@ -122,7 +127,9 @@ else
 }
 
 //Sends the response to the user
-return sendResponse($response);
+if (!empty($response->response)) {
+	return sendResponse($response->response);
+}
 
 function sendResponse(helpers\AjaxResponse $response = null) {
 	if (!$response instanceof helpers\AjaxResponse) {

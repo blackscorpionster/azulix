@@ -1,18 +1,44 @@
-<div id="divLogin" class="login">
-	<input type="hidden" name="token" id="token" value="{$token}" />
-	<div style="margin-top:10px;">
-		{$labels.user_text}
-	</div>
-	<div style="margin-top:10px;text-align:center;">
-		<input type="text" id="txtLogin" name="txtLogin" class="textBox" value="" />
-	</div>
-	<div style="margin-top:10px;">
-		{$labels.pass_txt}
-	</div>
-	<div style="margin-top:10px;text-align:center;">
-		<input type="password" id="txtPass" name="txtPass" class="textBox" />
-	</div>
-	<div style="margin-top:10px;text-align:center;">
-		<input class="button" type="button" id="btIngresar" name="btIngresar" value="{$labels.log_in}" onClick="validateLogin(this.form)" />
-	</div>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Azulix</title>
+	<link href="../web/css/Azulix.css" type="text/css" rel="StyleSheet">
+	<link href="../vendor/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+	<script src="../vendor/Yui/yahoo-min.js"></script>
+	<script src="../vendor/Yui/event-min.js"></script>
+	<script src="../vendor/Yui/json-min.js"></script>
+	<script src="../vendor/Yui/connection-min.js"></script>
+	<script src="../helpers/AppManager.js"></script>
+	<script src="../helpers/AjaxAppMgr.js"></script>
+	<script src="../web/javascript/Azulix.js"></script>
+</head>
+<body onload="APPBUILD()">
+	<form name="frmMainApp" id="frmMainApp">
+		<div id="tokenContainer"></div>
+		<div id="divMaster" class="master">
+			<div id="divLogin" class="login">
+				<input type="hidden" name="token" id="token" value="{$token}" />
+				<div style="margin-top:10px;">
+					{$labels.user_text}
+				</div>
+				<div style="margin-top:10px;text-align:center;">
+					<input type="text" id="txtLogin" name="txtLogin" class="textBox" value="" />
+				</div>
+				<div style="margin-top:10px;">
+					{$labels.pass_txt}
+				</div>
+				<div style="margin-top:10px;text-align:center;">
+					<input type="password" id="txtPass" name="txtPass" class="textBox" />
+				</div>
+				<div style="margin-top:10px;text-align:center;">
+					<input class="button" type="button" id="btIngresar" name="btIngresar" value="{$labels.log_in}" onClick="validateLogin(this.form)" />
+				</div>
+			</div>
+		</div>
+	</form>
+	<form name="frmJson" id="frmJson" enctype="multipart/form-data">
+		<div id="div_main_form"></div>
+	</form>
+</body>
+</html>

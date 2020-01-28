@@ -17,7 +17,6 @@ class validateLogin
 	function validateRequest()
 	{
 		$ret = true;
-		
 		if(!isset($_SESSION["app_user_data"]))
 		{
 			$login = $this->form["txtLogin"];

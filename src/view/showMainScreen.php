@@ -15,6 +15,8 @@ class showMainScreen {
 
 	public function addResponse() {	
 		$userData = $_SESSION["app_user_data"];
+		//print_r($userData);die(" >> ");
+		
 		$messageService = new AppMessageService();
 		$labels = $messageService->getMessages(['title_contacts', 'title_options', 'about', 'terms', 'help', 'title_welcome']);
 		
@@ -40,5 +42,7 @@ class showMainScreen {
 											//Only when the user has successfully logged in, the token is set to the main form
 											['tokenContainer','<input type="hidden" name="token" id="token" value="'.$_SESSION['token'].'"/>']
 										]);
+
+		//print_r($this->response);die(" >> ");
 	}
 }
