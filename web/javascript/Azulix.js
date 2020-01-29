@@ -15,8 +15,10 @@ function callOption(opt)
 
 function restartApp(response)
 {
-	APP.start();
-	document.getElementById('tokenContainer').innerHTML = "";
+	url = window.location.protocol + "//" + window.location.host + window.location.pathname + "?action=10000";
+	console.log('OOO', url);
+	window.location.href = url;
+	return false;
 }
 
 function validateNewUserInfo(formLogin)
@@ -663,4 +665,10 @@ function updateInfo(userId){
 function showYourInfo(response){
 	byebye("divUpdateYourInfo");
 	setObjectAsANewSon(response);
+}
+
+function logout() {
+	url = window.location.host + window.location.pathname + "?action=2";
+	console.log(url);
+	window.location.replace(url);
 }
